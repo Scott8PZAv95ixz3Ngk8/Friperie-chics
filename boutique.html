@@ -1,0 +1,302 @@
+<html><head><base href="https://friperie-app.com/echanger">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>FriperieChic - Échangez vos Vêtements</title>
+<style>
+  body {
+    font-family: 'Montserrat', sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f9f7f5;
+    color: #333;
+  }
+  .container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+  }
+  header {
+    background-color: #3a7563;
+    color: white;
+    padding: 20px 0;
+    text-align: center;
+  }
+  h1 {
+    margin: 0;
+    font-size: 2.5em;
+    font-weight: 700;
+  }
+  nav {
+    background-color: #2c5b4c;
+    padding: 10px 0;
+  }
+  nav ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    justify-content: center;
+  }
+  nav ul li {
+    margin: 0 15px;
+  }
+  nav ul li a {
+    color: white;
+    text-decoration: none;
+    font-weight: 600;
+    transition: color 0.3s ease;
+  }
+  nav ul li a:hover {
+    color: #ffd700;
+  }
+  .exchange-container {
+    background-color: white;
+    border-radius: 15px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    padding: 30px;
+    margin-top: 30px;
+  }
+  h2 {
+    color: #3a7563;
+    margin-bottom: 20px;
+    font-weight: 700;
+  }
+  .exchange-steps {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 30px;
+  }
+  .step-card {
+    flex: 1;
+    background-color: #f0f8ff;
+    border-radius: 10px;
+    padding: 20px;
+    margin: 0 10px;
+    text-align: center;
+    transition: all 0.3s ease;
+  }
+  .step-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.1);
+  }
+  .step-number {
+    font-size: 2.5em;
+    font-weight: 700;
+    color: #3a7563;
+    margin-bottom: 10px;
+  }
+  .exchange-items {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    gap: 20px;
+    margin-top: 30px;
+  }
+  .item-card {
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    transition: transform 0.3s ease;
+  }
+  .item-card:hover {
+    transform: translateY(-5px);
+  }
+  .item-image {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+  }
+  .item-details {
+    padding: 15px;
+  }
+  .item-title {
+    font-weight: 600;
+    margin: 0 0 10px 0;
+  }
+  .item-description {
+    font-size: 0.9em;
+    color: #666;
+    margin-bottom: 10px;
+  }
+  .exchange-btn {
+    background-color: #3a7563;
+    color: white;
+    border: none;
+    padding: 10px 15px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+  .exchange-btn:hover {
+    background-color: #2c5b4c;
+  }
+  .modal {
+    display: none;
+    position: fixed;
+    z-index: 1;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0,0,0,0.4);
+  }
+  .modal-content {
+    background-color: #fefefe;
+    margin: 15% auto;
+    padding: 20px;
+    border: 1px solid #888;
+    width: 80%;
+    max-width: 500px;
+    border-radius: 10px;
+  }
+  .close {
+    color: #aaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+    cursor: pointer;
+  }
+  .close:hover,
+  .close:focus {
+    color: #000;
+    text-decoration: none;
+    cursor: pointer;
+  }
+</style>
+</head>
+<body>
+  <header>
+    <div class="container">
+      <h1>FriperieChic</h1>
+      <p>Échangez et renouvelez votre garde-robe</p>
+    </div>
+  </header>
+  
+  <nav>
+    <ul>
+      <li><a href="/">Accueil</a></li>
+      <li><a href="/boutique">Boutique</a></li>
+      <li><a href="/vendre">Vendre</a></li>
+      <li><a href="/echanger">Échanger</a></li>
+      <li><a href="/temoignages">Témoignages</a></li>
+      <li><a href="/contact">Contact</a></li>
+    </ul>
+  </nav>
+
+  <div class="container">
+    <div class="exchange-container">
+      <h2>Échangez vos Vêtements</h2>
+      
+      <div class="exchange-steps">
+        <div class="step-card">
+          <div class="step-number">1</div>
+          <h3>Parcourez</h3>
+          <p>Explorez les vêtements disponibles à l'échange.</p>
+        </div>
+        <div class="step-card">
+          <div class="step-number">2</div>
+          <h3>Proposez</h3>
+          <p>Proposez un échange avec l'un de vos propres vêtements.</p>
+        </div>
+        <div class="step-card">
+          <div class="step-number">3</div>
+          <h3>Discutez</h3>
+          <p>Négociez les détails de l'échange avec l'autre utilisateur.</p>
+        </div>
+        <div class="step-card">
+          <div class="step-number">4</div>
+          <h3>Échangez</h3>
+          <p>Finalisez l'échange et profitez de votre nouveau vêtement !</p>
+        </div>
+      </div>
+      
+      <div class="exchange-items">
+        <div class="item-card">
+          <img src="https://example.com/robe-fleurie.jpg" alt="Robe fleurie d'été" class="item-image">
+          <div class="item-details">
+            <h3 class="item-title">Robe fleurie d'été</h3>
+            <p class="item-description">Taille M, parfait état, portée une fois</p>
+            <button class="exchange-btn" onclick="openModal('Robe fleurie d\'été')">Proposer un échange</button>
+          </div>
+        </div>
+        <div class="item-card">
+          <img src="https://example.com/jean-vintage.jpg" alt="Jean vintage taille haute" class="item-image">
+          <div class="item-details">
+            <h3 class="item-title">Jean vintage taille haute</h3>
+            <p class="item-description">Taille 38, excellent état, style années 90</p>
+            <button class="exchange-btn" onclick="openModal('Jean vintage taille haute')">Proposer un échange</button>
+          </div>
+        </div>
+        <div class="item-card">
+          <img src="https://example.com/chemise-rayee.jpg" alt="Chemise rayée en coton" class="item-image">
+          <div class="item-details">
+            <h3 class="item-title">Chemise rayée en coton</h3>
+            <p class="item-description">Taille L, comme neuve, idéale pour le bureau</p>
+            <button class="exchange-btn" onclick="openModal('Chemise rayée en coton')">Proposer un échange</button>
+          </div>
+        </div>
+        <div class="item-card">
+          <img src="https://example.com/veste-cuir.jpg" alt="Veste en cuir noir" class="item-image">
+          <div class="item-details">
+            <h3 class="item-title">Veste en cuir noir</h3>
+            <p class="item-description">Taille S, cuir véritable, style rock</p>
+            <button class="exchange-btn" onclick="openModal('Veste en cuir noir')">Proposer un échange</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div id="exchangeModal" class="modal">
+    <div class="modal-content">
+      <span class="close">&times;</span>
+      <h2>Proposer un échange</h2>
+      <p>Vous souhaitez échanger contre : <span id="selectedItem"></span></p>
+      <form id="exchangeForm">
+        <label for="yourItem">Votre article à échanger :</label>
+        <input type="text" id="yourItem" name="yourItem" required>
+        <label for="description">Description de votre article :</label>
+        <textarea id="description" name="description" required></textarea>
+        <button type="submit" class="exchange-btn">Envoyer la proposition</button>
+      </form>
+    </div>
+  </div>
+
+  <script>
+    const modal = document.getElementById("exchangeModal");
+    const span = document.getElementsByClassName("close")[0];
+    const selectedItemSpan = document.getElementById("selectedItem");
+    const exchangeForm = document.getElementById("exchangeForm");
+
+    function openModal(itemName) {
+      modal.style.display = "block";
+      selectedItemSpan.textContent = itemName;
+    }
+
+    span.onclick = function() {
+      modal.style.display = "none";
+    }
+
+    window.onclick = function(event) {
+      if (event.target == modal) {
+        modal.style.display = "none";
+      }
+    }
+
+    exchangeForm.onsubmit = function(e) {
+      e.preventDefault();
+      const yourItem = document.getElementById("yourItem").value;
+      const description = document.getElementById("description").value;
+      console.log("Proposition d'échange envoyée :", {
+        itemWanted: selectedItemSpan.textContent,
+        yourItem: yourItem,
+        description: description
+      });
+      alert("Votre proposition d'échange a été envoyée avec succès !");
+      modal.style.display = "none";
+      exchangeForm.reset();
+    }
+  </script>
+</body>
+</html>

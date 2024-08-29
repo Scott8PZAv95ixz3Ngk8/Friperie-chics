@@ -1,0 +1,294 @@
+<html><head><base href="https://friperie-app.com/temoignages">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>FriperieChic - Témoignages</title>
+<style>
+  body {
+    font-family: 'Montserrat', sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f9f7f5;
+    color: #333;
+  }
+  .container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+  }
+  header {
+    background-color: #3a7563;
+    color: white;
+    padding: 20px 0;
+    text-align: center;
+  }
+  h1 {
+    margin: 0;
+    font-size: 2.5em;
+    font-weight: 700;
+  }
+  nav {
+    background-color: #2c5b4c;
+    padding: 10px 0;
+  }
+  nav ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    justify-content: center;
+  }
+  nav ul li {
+    margin: 0 15px;
+  }
+  nav ul li a {
+    color: white;
+    text-decoration: none;
+    font-weight: 600;
+    transition: color 0.3s ease;
+  }
+  nav ul li a:hover {
+    color: #ffd700;
+  }
+  .testimonials-container {
+    background-color: white;
+    border-radius: 15px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    padding: 30px;
+    margin-top: 30px;
+  }
+  h2 {
+    color: #3a7563;
+    margin-bottom: 20px;
+    font-weight: 700;
+    text-align: center;
+  }
+  .testimonial-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+  }
+  .testimonial-card {
+    background-color: #f0f8ff;
+    border-radius: 10px;
+    padding: 20px;
+    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease;
+  }
+  .testimonial-card:hover {
+    transform: translateY(-5px);
+  }
+  .testimonial-header {
+    display: flex;
+    align-items: center;
+    margin-bottom: 15px;
+  }
+  .testimonial-avatar {
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    object-fit: cover;
+    margin-right: 15px;
+  }
+  .testimonial-info {
+    flex-grow: 1;
+  }
+  .testimonial-name {
+    font-weight: 600;
+    margin: 0;
+  }
+  .testimonial-date {
+    font-size: 0.9em;
+    color: #666;
+  }
+  .testimonial-content {
+    font-style: italic;
+    line-height: 1.6;
+  }
+  .testimonial-rating {
+    color: #ffd700;
+    font-size: 1.2em;
+    margin-top: 10px;
+  }
+  .add-testimonial {
+    text-align: center;
+    margin-top: 40px;
+  }
+  .add-testimonial-btn {
+    background-color: #3a7563;
+    color: white;
+    border: none;
+    padding: 12px 24px;
+    border-radius: 5px;
+    font-size: 1em;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+  .add-testimonial-btn:hover {
+    background-color: #2c5b4c;
+  }
+  .modal {
+    display: none;
+    position: fixed;
+    z-index: 1;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0,0,0,0.4);
+  }
+  .modal-content {
+    background-color: #fefefe;
+    margin: 15% auto;
+    padding: 20px;
+    border: 1px solid #888;
+    width: 80%;
+    max-width: 500px;
+    border-radius: 10px;
+  }
+  .close {
+    color: #aaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+    cursor: pointer;
+  }
+  .close:hover,
+  .close:focus {
+    color: #000;
+    text-decoration: none;
+    cursor: pointer;
+  }
+  #testimonialForm {
+    display: flex;
+    flex-direction: column;
+  }
+  #testimonialForm input,
+  #testimonialForm textarea {
+    margin-bottom: 15px;
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+  }
+  #testimonialForm button {
+    background-color: #3a7563;
+    color: white;
+    border: none;
+    padding: 10px;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+</style>
+</head>
+<body>
+  <header>
+    <div class="container">
+      <h1>FriperieChic</h1>
+      <p>Découvrez ce que nos clients pensent de nous</p>
+    </div>
+  </header>
+  
+  <nav>
+    <ul>
+      <li><a href="/">Accueil</a></li>
+      <li><a href="/boutique">Boutique</a></li>
+      <li><a href="/vendre">Vendre</a></li>
+      <li><a href="/echanger">Échanger</a></li>
+      <li><a href="/temoignages">Témoignages</a></li>
+      <li><a href="/contact">Contact</a></li>
+    </ul>
+  </nav>
+
+  <div class="container">
+    <div class="testimonials-container">
+      <h2>Témoignages de nos clients</h2>
+      
+      <div class="testimonial-grid">
+        <div class="testimonial-card">
+          <div class="testimonial-header">
+            <img src="https://example.com/avatar1.jpg" alt="Avatar de Marie" class="testimonial-avatar">
+            <div class="testimonial-info">
+              <h3 class="testimonial-name">Marie L.</h3>
+              <p class="testimonial-date">15 mai 2023</p>
+            </div>
+          </div>
+          <p class="testimonial-content">J'adore FriperieChic ! J'ai trouvé des pièces uniques à des prix abordables. Le processus d'échange est simple et l'équipe est très réactive.</p>
+          <div class="testimonial-rating">★★★★★</div>
+        </div>
+        
+        <div class="testimonial-card">
+          <div class="testimonial-header">
+            <img src="https://example.com/avatar2.jpg" alt="Avatar de Thomas" class="testimonial-avatar">
+            <div class="testimonial-info">
+              <h3 class="testimonial-name">Thomas G.</h3>
+              <p class="testimonial-date">2 juin 2023</p>
+            </div>
+          </div>
+          <p class="testimonial-content">Excellent concept ! J'ai pu renouveler ma garde-robe de manière éco-responsable. Les vêtements sont de qualité et bien décrits.</p>
+          <div class="testimonial-rating">★★★★☆</div>
+        </div>
+        
+        <div class="testimonial-card">
+          <div class="testimonial-header">
+            <img src="https://example.com/avatar3.jpg" alt="Avatar de Sophie" class="testimonial-avatar">
+            <div class="testimonial-info">
+              <h3 class="testimonial-name">Sophie M.</h3>
+              <p class="testimonial-date">20 juin 2023</p>
+            </div>
+          </div>
+          <p class="testimonial-content">FriperieChic m'a permis de vendre des vêtements que je ne portais plus. C'est facile à utiliser et on se sent vraiment dans une communauté bienveillante.</p>
+          <div class="testimonial-rating">★★★★★</div>
+        </div>
+      </div>
+      
+      <div class="add-testimonial">
+        <button class="add-testimonial-btn" onclick="openModal()">Ajouter un témoignage</button>
+      </div>
+    </div>
+  </div>
+
+  <div id="testimonialModal" class="modal">
+    <div class="modal-content">
+      <span class="close">&times;</span>
+      <h2>Ajouter un témoignage</h2>
+      <form id="testimonialForm">
+        <input type="text" id="name" name="name" placeholder="Votre nom" required>
+        <textarea id="content" name="content" placeholder="Votre témoignage" required></textarea>
+        <input type="number" id="rating" name="rating" min="1" max="5" placeholder="Note (1-5)" required>
+        <button type="submit">Envoyer</button>
+      </form>
+    </div>
+  </div>
+
+  <script>
+    const modal = document.getElementById("testimonialModal");
+    const span = document.getElementsByClassName("close")[0];
+    const testimonialForm = document.getElementById("testimonialForm");
+
+    function openModal() {
+      modal.style.display = "block";
+    }
+
+    span.onclick = function() {
+      modal.style.display = "none";
+    }
+
+    window.onclick = function(event) {
+      if (event.target == modal) {
+        modal.style.display = "none";
+      }
+    }
+
+    testimonialForm.onsubmit = function(e) {
+      e.preventDefault();
+      const name = document.getElementById("name").value;
+      const content = document.getElementById("content").value;
+      const rating = document.getElementById("rating").value;
+      console.log("Nouveau témoignage :", { name, content, rating });
+      alert("Merci pour votre témoignage ! Il sera publié après modération.");
+      modal.style.display = "none";
+      testimonialForm.reset();
+    }
+  </script>
+</body>
+</html>
